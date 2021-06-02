@@ -61,7 +61,7 @@ const Signup = ()=>{
                 <button className="btn waves-effect waves-light #00796b teal darken-2"
                 onClick={()=>PostData()}
                 >
-                    Login
+                    Submit
                 </button>
                 <h5>
                     <Link to="/login">Already have an account?</Link>
