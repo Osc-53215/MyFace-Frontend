@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
+import { useHistory } from 'react-router-dom'
+import M from 'materialize-css'
+
 
 const CreatePost = ()=>{
+    const history = useHistory()
     const [title, setTitle] = useState ("")
     const [body, setBody] = useState ("")
     const [image, setImage] = useState ("")
@@ -24,7 +28,28 @@ const CreatePost = ()=>{
             console.log(err)
         })
 
-        
+        fetch("/createpost", {
+            method:"post",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                title,
+                body,
+                pic:url
+            })
+        }).then(res=>res.json())
+        .then(data=>{
+            if(data.error){
+                M.toast({html: data.error, classes:"#d50000 red accent-4"})
+            }
+            else{
+                M.toast({html:"posted successfully", classes: "#66bb6a green lighten-1"})
+                history.push('/')
+            }
+        }).catch(err=>{
+            console.log(err)
+        })
     }
 
 
