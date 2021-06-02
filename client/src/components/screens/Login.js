@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import M from 'materialize-css'
 
 const Login = ()=>{const history = useHistory()
     const [password, setPassword] = useState("")
@@ -9,7 +10,7 @@ const Login = ()=>{const history = useHistory()
          M.toast({html: "invalid e-mail", classes:"#d50000 red accent-4"})
          return
         }
-        fetch('/signup',{
+        fetch('/signin',{
             method:"post",
             headers:{
                 "Content-Type":"application/json"
@@ -20,6 +21,7 @@ const Login = ()=>{const history = useHistory()
             })
         }).then(res=>res.json())
         .then(data=>{
+            console.log(data)
             if(data.error){
                 M.toast({html: data.error, classes:"#d50000 red accent-4"})
             }
@@ -48,7 +50,9 @@ const Login = ()=>{const history = useHistory()
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
                 />
-                <button className="btn waves-effect waves-light #00796b teal darken-2">
+                <button className="btn waves-effect waves-light #00796b teal darken-2"
+                onClick={()=>PostData()}
+                >
                     Login
                 </button>
                 <h5>

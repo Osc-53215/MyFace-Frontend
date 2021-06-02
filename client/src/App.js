@@ -12,7 +12,7 @@ import Sidebar from './components/Sidebar'
 
 function App() {
   return (
-    <>
+   
     <BrowserRouter>
       <NavBar />
       <Route exact path="/" >
@@ -31,7 +31,7 @@ function App() {
         <CreatePost />
       </Route>
     </BrowserRouter>
-  </>
+  
   );
 }
 
