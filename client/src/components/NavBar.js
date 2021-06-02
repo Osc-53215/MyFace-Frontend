@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMoreOutlined';
-import { Avatar, IconButton } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 
 const NavBar =()=>{
     return(
@@ -13,6 +13,7 @@ const NavBar =()=>{
       <li><Link to="/login">Login</Link></li>
       <li><Link to="/signup">Signup</Link></li>
       <li><Link to="/create">Post</Link></li>
+      
      <li>
      <IconButton>
           <ExpandMoreIcon />
