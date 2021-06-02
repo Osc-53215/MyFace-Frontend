@@ -1,8 +1,13 @@
 import React from 'react'
+import Sidebar from '../Sidebar'
 
 const Home = ()=>{
     return(
-        <div className="home">
+        <div className="row">
+            <div className = 'col s2'>
+            <Sidebar/>
+            </div>
+        <div className = 'col s10'>
             <div className="card home-card">
                 <h5>John Smith</h5>
                 <div className="card-image">
@@ -67,6 +72,7 @@ const Home = ()=>{
                     </div>
                 </div>
             </div>
+        </div>
 
             </div>
     )

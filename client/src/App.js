@@ -7,10 +7,12 @@ import Login from './components/screens/Login'
 import Profile from './components/screens/Profile'
 import Signup from './components/screens/Signup'
 import CreatePost from './components/screens/CreatePost'
+import Sidebar from './components/Sidebar'
 
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <NavBar />
       <Route exact path="/" >
@@ -29,6 +31,7 @@ function App() {
         <CreatePost />
       </Route>
     </BrowserRouter>
+  </>
   );
 }
 
