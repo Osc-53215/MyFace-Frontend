@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, createContext} from 'react'
 import NavBar from './components/NavBar'
 import "./App.css"
 import {BrowserRouter, Route} from 'react-router-dom'
@@ -7,7 +7,10 @@ import Login from './components/screens/Login'
 import Profile from './components/screens/Profile'
 import Signup from './components/screens/Signup'
 import CreatePost from './components/screens/CreatePost'
-import Sidebar from './components/Sidebar'
+//import Sidebar from './components/Sidebar'
+
+
+const UserContext= createContext()
 
 
 function App() {
