@@ -1,26 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMoreOutlined';
-import { IconButton } from '@material-ui/core';
 
 const NavBar =()=>{
     return(
 
   <nav>
   <div className="nav-wrapper white" >
-    <Link to="/" className="brand-logo left">My Face</Link>
+    <Link className="brand-logo left">My Face</Link>
     <ul id="nav-mobile" className="right hide-on-med-and-down">
+      <li>
+        <Link to="/"><i class="material-icons">home</i></Link>
+        </li>
+      <li>
+        <Link to="/create"><i class="material-icons">add_a_photo</i></Link>
+      </li>
+      <li>
+        <Link to="/profile"><i class="material-icons">account_circle</i></Link>
+      </li>
       <li><Link to="/login">Login</Link></li>
       <li><Link to="/signup">Signup</Link></li>
-      <li><Link to="/create">Post</Link></li>
-      <li><Link to="/profile">News Feed</Link></li>
-      
-     <li>
-     <IconButton>
-          <ExpandMoreIcon />
-      </IconButton>
-     </li>
-      
     </ul>
   </div>
 </nav>

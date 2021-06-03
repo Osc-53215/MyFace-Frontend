@@ -27,10 +27,11 @@ a{
 }
 
 .gallery{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 5px;
+  display: center;
+  max-width: 100%;
+  height: max-content;
+  margin: 5% auto;
+  ;
 
 }
 
@@ -54,3 +55,8 @@ a{
   cursor: pointer;
 }
 
+/* .display-posts{
+  max-width: 80%;
+  height: max-content;
+  margin: 26px auto;
+} */

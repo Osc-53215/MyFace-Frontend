@@ -48,11 +48,11 @@ const Home = ()=>{
     }
 
     return(
-        <div className="row">
-            <div className = 'col s2'>
-            <Sidebar/>
-            </div>
-        <div className = 'col s10'>
+        // <div className="row">
+        //     <div className = 'col s2'>
+        //     <Sidebar/>
+        //     </div>
+        // <div className = 'col s10'>
             <div className="home">{
                 data.map(item=>{
                     return(
@@ -80,8 +80,8 @@ const Home = ()=>{
             }
 
             </div>
-            </div>
-             </div>
+            //</div>
+            // </div>
     )
 }
 
