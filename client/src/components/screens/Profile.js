@@ -9,6 +9,7 @@ const Profile = ()=>{
             }
         }).then(res=>res.json())
         .then(result=>{
+            console.log(result)
             setPics(result.mypost)
         })
     },[])
@@ -33,28 +34,23 @@ const Profile = ()=>{
                         <h6>40 posts</h6>
                         <h6>40 friends</h6>
                         <h6>40 followings</h6>
-
                     </div>
                     </div>
                     <div>
-                    
                     </div>
-                    
                 </div>
-                
             </div>
             <div>
             <div className="gallery">
                 {
                     mypics.map(item=>{
                         return(
-                            <img className="item" src= {item.photo} alt={item.title}/> 
-
+                            <img key={item._id} className="item" src= {item.photo} alt={item.title} /> 
                         )
                     })
                 }
-                    </div>
-                    </div>
+                </div>
+            </div>
         </div>
     )
 }
