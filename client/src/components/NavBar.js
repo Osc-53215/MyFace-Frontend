@@ -13,6 +13,7 @@ const NavBar =()=>{
       <li><Link to="/login">Login</Link></li>
       <li><Link to="/signup">Signup</Link></li>
       <li><Link to="/create">Post</Link></li>
+      <li><Link to="/profile">News Feed</Link></li>
       
      <li>
      <IconButton>
