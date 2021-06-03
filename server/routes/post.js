@@ -49,4 +49,32 @@ router.get('/mypost', requireLogin, (req, res)=>{
     })
 })
 
+router.put('/like', requireLogin, (req, res)=>{
+    Post.findOneAndUpdate(req.body.postId,{
+        $push:{likes:req.user._id}
+    },{
+        new:true
+    }).exec((err, result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }else{
+            res.json(result)
+        }
+    })
+})
+
+router.put('/unlike', requireLogin, (req, res)=>{
+    Post.findOneAndUpdate(req.body.postId,{
+        $push:{dislikes:req.user._id}
+    },{
+        new:true
+    }).exec((err, result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }else{
+            res.json(result)
+        }
+    })
+})
+
 module.exports = router
