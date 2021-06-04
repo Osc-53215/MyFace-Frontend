@@ -131,9 +131,13 @@ const makeComment = (text, postId)=>{
             // </div>
     )
 }
+<<<<<<< HEAD
 export default Home
 
 
 
 
 
+=======
+export default Home
+>>>>>>> 764287b5b52ad78552a73c2ccf0f9e2c8d17e2b5
