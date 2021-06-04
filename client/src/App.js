@@ -7,7 +7,7 @@ import Login from './components/screens/Login'
 import Profile from './components/screens/Profile'
 import Signup from './components/screens/Signup'
 import CreatePost from './components/screens/CreatePost'
-//import Sidebar from './components/Sidebar'
+import UserProfile from './components/screens/UserProfile'
 import {reducer, intialState} from './Reducer/userReducer'
 
 
@@ -34,7 +34,7 @@ const Routing = () =>{
     <Route path="/Login">
       <Login />
     </Route>
-    <Route exact path="/profile">
+     <Route exact path="/profile">   {/*Using the "exact path" allows us to only acces this profile when called and not get mixed up with UserProfile.js */}
       <Profile />
     </Route>
     <Route path="/Signup">
@@ -43,6 +43,10 @@ const Routing = () =>{
     <Route path="/create">
       <CreatePost />
     </Route>
+    <Route path="/profile/:userid">
+      <UserProfile />
+    </Route>
+
     </Switch>
   )
 }

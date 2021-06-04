@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import Sidebar from '../Sidebar'
 
 const Home = ()=>{
     const [data, setData] = useState([])
@@ -15,44 +14,87 @@ const Home = ()=>{
         })
     },[])
 
-    const likePost = (id) =>{
-        fetch('/like', {
+    const likePost = (id)=>{
+        fetch('/like',{
             method:"put",
             headers:{
                 "Content-Type":"application/json",
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
             },
             body:JSON.stringify({
-                postID:id
+                postId:id
             })
         }).then(res=>res.json())
         .then(result=>{
-            console.log(result)
+                  console.log(result)
+          const newData = data.map(item=>{
+              if(item._id==result._id){
+                  return result
+              }else{
+                  return item
+              }
+          })
+          setData(newData)
+        }).catch(err=>{
+            console.log(err)
         })
-    }
+  }
 
-    const unlikePost = (id) =>{
-        fetch('/unlike', {
-            method:"put",
-            headers:{
-                "Content-Type":"application/json",
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
-            },
-            body:JSON.stringify({
-                postID:id
-            })
-        }).then(res=>res.json())
-        .then(result=>{
-            console.log(result)
+  const unlikePost = (id)=>{
+    fetch('/unlike',{
+        method:"put",
+        headers:{
+            "Content-Type":"application/json",
+            "Authorization":"Bearer "+localStorage.getItem("jwt")
+        },
+        body:JSON.stringify({
+            postId:id
         })
-    }
+    }).then(res=>res.json())
+    .then(result=>{
+      //   console.log(result)
+      const newData = data.map(item=>{
+          if(item._id==result._id){
+              return result
+          }else{
+              return item
+          }
+      })
+      setData(newData)
+    }).catch(err=>{
+      console.log(err)
+  })
+}
+
+const makeComment = (text, postId)=>{
+    fetch('/comment',{
+        method:"put",
+        headers:{
+            "Content-Type":"application/json",
+            "Authorization":"Bearer "+localStorage.getItem("jwt")
+        },
+        body:JSON.stringify({
+            postId,
+            text
+        })
+    }).then(res=>res.json())
+    .then(result=>{
+        console.log(result)
+        const newData = data.map(item=>{
+            if(item._id == result._id){
+                return result
+            }else{
+                return item
+            }
+        })
+        setData(newData)
+    }).catch(err=>{
+        console.log(err)
+    })
+}
+
 
     return(
-        // <div className="row">
-        //     <div className = 'col s2'>
-        //     <Sidebar/>
-        //     </div>
-        // <div className = 'col s10'>
             <div className="home">{
                 data.map(item=>{
                     return(
@@ -72,7 +114,19 @@ const Home = ()=>{
                         <h6>{item.dislikes.length} dislikes</h6>
                         <h5>{item.title}</h5>
                         <h4>{item.body}</h4>
+                        {
+                        item.comments.map(record=>{
+                            return(
+                                <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.name}</span>{record.text}</h6>
+                            )
+                        })
+                    }
+                    <form onSubmit={(e)=>{
+                        e.preventDefault()
+                        makeComment(e.target[0].value, item._id)
+                    }}>
                         <input type="text" placeholder="add comment"/>
+                    </form>
                     </div>
                 </div>
                     )
