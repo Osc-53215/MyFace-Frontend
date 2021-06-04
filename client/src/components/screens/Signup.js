@@ -9,6 +9,7 @@ const Signup = ()=>{
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
     const PostData = ()=>{
+        // eslint-disable-next-line
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
          M.toast({html: "invalid e-mail", classes:"#d50000 red accent-4"})
          return
@@ -55,7 +56,7 @@ const Signup = ()=>{
                 onChange={(e)=>setEmail(e.target.value)}
                 />
                 <input 
-                type="text"
+                type="password"
                 placeholder="password"
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}

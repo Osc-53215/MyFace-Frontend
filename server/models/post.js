@@ -1,8 +1,5 @@
 const mongoose = require('mongoose')
 const {ObjectId} = mongoose.Schema.Types
-
-
-
 const postSchema = new mongoose.Schema({
     title:{
         type: String,
@@ -27,5 +24,4 @@ const postSchema = new mongoose.Schema({
         ref:"User"
     }
 })
-
 mongoose.model("Post", postSchema)

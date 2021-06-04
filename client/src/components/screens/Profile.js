@@ -1,7 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
+import { UserContext } from '../../App'
 
 const Profile = ()=>{
     const [mypics, setPics] = useState([])
+    // eslint-disable-next-line
+    const {state,dispatch} = useContext(UserContext)
     useEffect(()=>{
         fetch('/mypost',{
             headers:{
@@ -24,7 +27,7 @@ const Profile = ()=>{
                 borderBottom:"1px solid grey"
             }}>
                 <div>
-                    <img style={{width:"140px", height:"140px"}} 
+                    <img style={{width:"160px", height:"160px", borderRadius: "80px"}} 
                     src= "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"/>
                 </div>
                     <div>
@@ -32,7 +35,7 @@ const Profile = ()=>{
                         
 
                                 
-                    <h4>John Smith</h4>
+                    <h4>{state?state.name: "loading"}</h4>
                         <div style={{display:"flex", justifyContent:"space-between", width:"108%"}}>
                             <h6>40 posts</h6>
                             <h6>40 friends</h6>
