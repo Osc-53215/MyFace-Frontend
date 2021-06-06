@@ -33,11 +33,11 @@ const Routing = () =>{
     <Route path="/Login">
       <Login />
     </Route>
-     <Route exact path="/profile">   {/*Using the "exact path" allows us to only acces this profile when called and not get mixed up with UserProfile.js */}
-      <Profile />
-    </Route>
     <Route path="/Signup">
       <Signup />
+    </Route>
+    <Route exact path="/profile">   {/*Using the "exact path" allows us to only acces this profile when called and not get mixed up with UserProfile.js */}
+      <Profile />
     </Route>
     <Route path="/create">
       <CreatePost />
