@@ -7,10 +7,10 @@ const history = useHistory()
 const renderList = ()=>{
   if(state){
     return [
-      <li><Link to="/"><i class="material-icons">home</i></Link></li>,
-      <li><Link to="/profile"><i class="material-icons">account_circle</i></Link></li>,
-      <li><Link to="/create"><i class="material-icons">add_a_photo</i></Link></li>,
-      <li>
+      <li key = '1'><Link to="/"><i className="material-icons">home</i></Link></li>,
+      <li key = '2'><Link to="/profile"><i className="material-icons">account_circle</i></Link></li>,
+      <li key = '3'><Link to="/create"><i className="material-icons">add_a_photo</i></Link></li>,
+      <li key = '4'>
         <button className="btn #c62828 red darken-3"
                 onClick={()=>{
                   localStorage.clear()
@@ -24,8 +24,8 @@ const renderList = ()=>{
     ]
   }else{
     return [
-      <li><Link to="/login">Login</Link></li>,
-      <li><Link to="/signup">Signup</Link></li>
+      <li key = '5'><Link to="/login">Login</Link></li>,
+      <li key = '6'><Link to="/signup">Signup</Link></li>
     ]
   }
 }

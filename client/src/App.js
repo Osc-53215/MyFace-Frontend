@@ -9,9 +9,8 @@ import Signup from './components/screens/Signup'
 import CreatePost from './components/screens/CreatePost'
 import UserProfile from './components/screens/UserProfile'
 import {reducer, intialState} from './Reducer/userReducer'
-
-
 export const UserContext = createContext()
+
 
 const Routing = () =>{
   const history = useHistory()
