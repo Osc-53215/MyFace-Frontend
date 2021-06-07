@@ -29,7 +29,7 @@ const Profile = ()=>{
         }}>
                 <div>
                     <img style={{width:"160px", height:"160px", borderRadius: "80px"}} 
-                    src= "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"/>
+                    src= "https://i.ibb.co/GP64ysg/Screen-Shot-2021-06-06-at-10-13-32-PM.jpg"/>
                 </div>
                     <div>
                     <div>
