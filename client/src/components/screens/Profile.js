@@ -6,8 +6,6 @@ const Profile = ()=>{
     // eslint-disable-next-line
     const {state,dispatch} = useContext(UserContext)
     useEffect(()=>{
-
-
         fetch('/mypost',{
             headers:{
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
@@ -39,11 +37,10 @@ const Profile = ()=>{
 
                                 
                     <h4>{state?state.name: "loading"}</h4>
+                    <h5>{state?state.email:"loading"}</h5>
                         <div style={{display:"flex", justifyContent:"space-between", width:"108%"}}>
-                            <h6>40 posts</h6>
-                            <h6>40 friends</h6>
-                            <h6>40 followings</h6>
-                           
+                            <h6>{mypics.length} posts</h6>
+                            <h6> 1000 followers</h6>
                         </div>
                     </div>
                         <div>

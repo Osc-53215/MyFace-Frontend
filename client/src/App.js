@@ -30,10 +30,10 @@ const Routing = () =>{
       <Route exact path="/" >
       <Home />
     </Route>
-    <Route path="/Login">
+    <Route path="/login">
       <Login />
     </Route>
-    <Route path="/Signup">
+    <Route path="/signup">
       <Signup />
     </Route>
     <Route exact path="/profile">   {/*Using the "exact path" allows us to only acces this profile when called and not get mixed up with UserProfile.js */}
@@ -58,6 +58,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routing />
+      
     </BrowserRouter>
     </UserContext.Provider>
   );
